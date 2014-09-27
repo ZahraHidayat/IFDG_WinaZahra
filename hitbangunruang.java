@@ -12,7 +12,9 @@ public class hitbangunruang {
                "1. Kubus \n" +
                "2. Balok \n" +
                "3. Bola \n" +
-               "4. Keluar \n" +
+			   "4. Prisma \n" +
+			   "5. Limas \n" +
+               "6. Keluar \n" +
                "-----------------------\n" +
                "Masukkan Nomer Menu :"));
                
@@ -95,7 +97,65 @@ public class hitbangunruang {
               break;
           }
                   break;
-        case 4 :
+		case 4 : 
+				int submenu4;
+				submenu4 = Integer.parseInt(JOptionPane.showInputDialog(
+				"Anda memilih Menu Limas Segitiga \n"+
+				"\n"+
+				"1. Hitung Luas Permukaan Limas \n"+
+				"2. Hitung Volume Limas \n"+
+				"Masukkan pilihan :"));
+				switch(submenu4) 
+				{
+				case 1 : double alaslimas, tinggialaslimas, sisialaslimas,tinggilimas, luasalaslimas, luasselimutlimas, luaspermukaanlimas;
+						 alaslimas = Double.valueOf(JOptionPane.showInputDialog("Masukkan Nilai Alas : "));
+						 tinggialaslimas = Double.valueOf(JOptionPane.showInputDialog("Masukkan Nilai Tinggi Alas : "));
+						 sisialaslimas = Double.valueOf(JOptionPane.showInputDialog("Masukkan Nilai Sisi : "));
+						 tinggilimas = Double.valueOf(JOptionPane.showInputDialog("Masukkan Nilai Tinggi : "));
+						 luasalaslimas = 2 * ((alaslimas * tinggilimas) / 2 );
+						 luasselimutlimas = 3 * (alaslimas * tinggilimas);
+						 luaspermukaanlimas = luasalaslimas + luasselimutlimas;
+						 JOptionPane.showMessageDialog(null, "Luas Permukaan Limas Segitga : "+ luaspermukaanlimas);
+						 break;
+				case 2 : double alaslimas1, tinggialaslimas1, luasalaslimas1, tinggilimas1, volumelimas;
+						 alaslimas1 = Double.valueOf(JOptionPane.showInputDialog("Masukkan Nilai Alas : "));
+						 tinggialaslimas1 = Double.valueOf(JOptionPane.showInputDialog("Masukkan Nilai Tinggi Alas : "));
+						 tinggilimas1 = Double.valueOf(JOptionPane.showInputDialog("Masukkan Nilai Tinggi : "));
+						 luasalaslimas1 = 2 * ((alaslimas1 * tinggilimas1) / 2 );
+						 volumelimas = 0.3 * luasalaslimas1 + tinggilimas1;
+						 JOptionPane.showMessageDialog(null, "Volume Limas Segitiga: " + volumelimas);
+						 break;
+				}		  
+				break;
+        case 5 : 
+				int submenu5 = Integer.parseInt(JOptionPane.showInputDialog(
+				"Anda Memilih Menu dengan Rumus Prisma Segitiga \n" +
+				"\n"+
+				"1. Hitung Luas Permukaan \n"+
+				"2. Hitung Volume \n"+
+				"\n"));
+			switch(submenu5) {
+				case 1 : double alasprisma, tgprisma, sisialas, tgalas, lalas, kalasprisma, lpermukaan;
+						 alasprisma = Double.valueOf(JOptionPane.showInputDialog("Masukkan Nilai Alas : "));
+						 tgalas = Double.valueOf(JOptionPane.showInputDialog("Masukkan Nilai Tinggi Alas : "));
+						 sisialas = Double.valueOf(JOptionPane.showInputDialog("Masukkan Nilai Sisi Alas : "));
+						 tgprisma = Double.valueOf(JOptionPane.showInputDialog("Masukkan Nilai Tinggi Prisma : "));
+						 lalas=(alasprisma * tgalas) / 2;
+						 kalasprisma = 3 * sisialas;
+						 lpermukaan = 2 * lalas + (kalasprisma * tgprisma);
+						 JOptionPane.showMessageDialog(null, "Luas Permukaan Prisma Segitga adalah : "+ lpermukaan);
+						 break;
+				case 2 : double aprisma1, tgalas1, lalas1, tgprisma1, vprisma;
+						 aprisma1 = Double.valueOf(JOptionPane.showInputDialog("Masukkan Nilai Alas : "));
+						 tgalas1 = Double.valueOf(JOptionPane.showInputDialog("Masukkan Nilai Tinggi Alas : "));
+						 tgprisma1 = Double.valueOf(JOptionPane.showInputDialog("Masukkan Nilai Tinggi Prisma : "));
+						 lalas1 = (aprisma1 * tgalas1) /2;
+						 vprisma = lalas1 * tgprisma1;
+						 JOptionPane.showMessageDialog(null, "Volume Prisma Segitga adalah : "+ vprisma);
+						 break;
+						 }
+				break;
+		case 6 :
                   System.exit(0);
                   break;
         default :
